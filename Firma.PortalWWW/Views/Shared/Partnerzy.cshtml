@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.StronaGlowna>
+@{
+
+    string[] partnerzyZdjecia = (Model.First().PartnerzyZdjecia).Split(';');
+}
+@foreach (var item in partnerzyZdjecia)
+{
+    <div class="logo-bar__item">
+        <img src="~/lib/bootstrap/images/logo/@item" alt="" title="" />
+    </div>
+}

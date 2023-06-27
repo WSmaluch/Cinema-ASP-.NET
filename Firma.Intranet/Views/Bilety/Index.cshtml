@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Firma.Data.Data.Kino.Bilet>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Film)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumerSiedzenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataProjekcji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZarezerwowanyPrzez)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywny)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KiedyDodal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KtoZmodyfikowal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KiedyZmodyfikowal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KtoWykasowal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KiedyWykasowal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film.Gatunek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumerSiedzenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataProjekcji)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZarezerwowanyPrzez)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CzyAktywny)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KiedyDodal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KtoZmodyfikowal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KiedyZmodyfikowal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KtoWykasowal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KiedyWykasowal)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdBiletu">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdBiletu">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdBiletu">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

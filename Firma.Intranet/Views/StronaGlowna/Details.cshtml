@@ -1,0 +1,90 @@
+﻿@model Firma.Data.Data.CMS.StronaGlowna
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>StronaGlowna</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Bannery)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bannery)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TekstyBanner)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TekstyBanner)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReklamyZdjecia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReklamyZdjecia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TekstyReklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TekstyReklama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PartnerzyZdjecia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PartnerzyZdjecia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KtoDodal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KtoDodal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyDodal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyDodal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KtoZmodyfikowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KtoZmodyfikowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyZmodyfikowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyZmodyfikowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KtoWykasowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KtoWykasowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyWykasowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyWykasowal)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdStronyGlownej">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

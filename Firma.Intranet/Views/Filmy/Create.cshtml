@@ -1,0 +1,90 @@
+﻿@model Firma.Data.Data.Kino.Filmy
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<section class="section section-details grey lighten-4">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="card-title">Dodaj film</span>
+                            </div>
+                        </div>
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Tytuł" class="control-label"></label>
+                                <input asp-for="Tytuł" class="form-control" />
+                                <span asp-validation-for="Tytuł" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Opis" class="control-label"></label>
+                                <input asp-for="Opis" class="form-control" />
+                                <span asp-validation-for="Opis" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="DataPremiery" class="control-label"></label>
+                                <input asp-for="DataPremiery" class="form-control" />
+                                <span asp-validation-for="DataPremiery" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Rezyser" class="control-label"></label>
+                                <input asp-for="Rezyser" class="form-control" />
+                                <span asp-validation-for="Rezyser" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Dlugosc" class="control-label"></label>
+                                <input asp-for="Dlugosc" class="form-control" />
+                                <span asp-validation-for="Dlugosc" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Gatunek" class="control-label"></label>
+                                <input asp-for="Gatunek" class="form-control" />
+                                <span asp-validation-for="Gatunek" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="LinkDoZwiastunu" class="control-label"></label>
+                                <input asp-for="LinkDoZwiastunu" class="form-control" />
+                                <span asp-validation-for="LinkDoZwiastunu" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="OdKiedyGrany" class="control-label"></label>
+                                <input asp-for="OdKiedyGrany" class="form-control" />
+                                <span asp-validation-for="OdKiedyGrany" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="DoKiedyGrany" class="control-label"></label>
+                                <input asp-for="DoKiedyGrany" class="form-control" />
+                                <span asp-validation-for="DoKiedyGrany" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Zdjecie" class="control-label"></label>
+                                <input asp-for="Zdjecie" class="form-control" />
+                                <span asp-validation-for="Zdjecie" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="GodzinyGrania" class="control-label"></label>
+                                <input asp-for="GodzinyGrania" class="form-control" />
+                                <span asp-validation-for="GodzinyGrania" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

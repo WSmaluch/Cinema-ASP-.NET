@@ -1,0 +1,19 @@
+﻿@model Firma.Data.Data.Kino.Bilet
+
+@{
+    ViewData["Title"] = "Rezerwacja";
+}
+
+<h1>Rezerwacja biletu</h1>
+
+<p>Film: @Model.Film.Tytuł</p>
+<p>Wybrane miejsce: @Model.NumerSiedzenia</p>
+
+<form method="post" action="/Kino/RezerwujBilet">
+    <input type="hidden" name="filmId" value="@Model.FilmId" />
+    <input type="hidden" name="seatNumber" value="@Model.NumerSiedzenia" />
+
+    
+
+    <button type="submit" class="btn btn-primary">Potwierdź rezerwację</button>
+</form>

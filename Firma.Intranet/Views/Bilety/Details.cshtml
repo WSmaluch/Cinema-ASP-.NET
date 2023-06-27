@@ -1,0 +1,78 @@
+﻿@model Firma.Data.Data.Kino.Bilet
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Bilet</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Film)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Film.Gatunek)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumerSiedzenia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumerSiedzenia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataProjekcji)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataProjekcji)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ZarezerwowanyPrzez)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ZarezerwowanyPrzez)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyDodal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyDodal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KtoZmodyfikowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KtoZmodyfikowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyZmodyfikowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyZmodyfikowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KtoWykasowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KtoWykasowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyWykasowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyWykasowal)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdBiletu">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

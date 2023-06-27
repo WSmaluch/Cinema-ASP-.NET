@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Strona>
+<nav class="grid__item" id="AccessibleNav">
+    <ul id="siteNav" class="site-nav medium center hidearrow">
+        @if (Model != null)
+        {
+            <li>@Html.ActionLink("Repertuar","Index","Kino")</li>
+            @foreach (var item in Model)
+            {
+                
+                <li class="lvl1 parent megamenu">
+                    <a href="@Url.Action(item.LinkTytul,"Home")">@item.LinkTytul<i class="anm anm-angle-down-l"></i></a>
+                </li>
+            }
+
+        }
+
+    </ul>
+</nav>

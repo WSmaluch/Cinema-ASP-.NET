@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Firma.Data.Data.Kino.Filmy>
+@foreach(var item in Model)
+{
+    <div class="col-12 item">
+        <!-- start product image -->
+        <div class="product-image">
+            <!-- start product image -->
+            <a href="#">
+                <!-- image -->
+                <a href="/Kino/Szczegoly/@item.IdFilmu">
+                    <img class="blur-up lazyload" style="width: 72%; height:72%;" src="~/lib/bootstrap/images/movies/@item.Zdjecie" src="~/lib/bootstrap/images/movies/@item.Zdjecie" alt="image" title="@item.Tytuł">
+                    </a>
+                <!-- End image -->
+            </a>
+            <!-- end product image -->
+        </div>
+        <!-- end product image -->
+        <!--start product details -->
+        <div class="product-details text-center">
+            <!-- product name -->
+            <div class="product-name">
+                <a href="#">@item.Tytuł</a>
+            </div>
+            <!-- End product name -->
+        </div>
+        <!-- End product details -->
+    </div>
+}

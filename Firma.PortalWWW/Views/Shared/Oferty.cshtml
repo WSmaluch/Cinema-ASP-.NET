@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Oferty>
+@foreach (var item in Model)
+{
+    <div class="col-12 item">
+        <!-- start product image -->
+        <div class="product-image d-flex justify-content-center">
+            <!-- start product image -->
+            <a href="#">
+                <!-- image -->
+                <img class="primary blur-up lazyload" src="~/lib/bootstrap/images/blog/@item.Zdjecie" alt="image" title="product">
+                <!-- End image -->
+            </a>
+            <!-- end product image -->
+        </div>
+
+        <!-- end product image -->
+        <!-- start product details -->
+        <div class="product-details">
+            <!-- product name -->
+            <div class="product-name text-center">
+                <a href="#">@item.Tytul</a>
+            </div>
+            <!-- End product name -->
+            <!-- product description -->
+            <div class="product-description text-center">
+                <p>@item.Tresc</p>
+            </div>
+            <!-- End product description -->
+        </div>
+        <!-- End product details -->
+    </div>
+}

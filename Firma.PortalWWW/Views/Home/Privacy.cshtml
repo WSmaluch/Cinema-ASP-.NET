@@ -1,0 +1,52 @@
+﻿@model Firma.Data.Data.CMS.Prywatnosc
+@{
+    ViewData["Title"] = "Prywatnosc";
+}
+<!--Body Content-->
+<div id="page-content">
+    <!--Page Title-->
+    <br /><br /><br />
+    <div class="page section-header text-center">
+        <div class="page-title">
+            <div class="wrapper"><h1 class="page-width">Polityka prywatności</h1></div>
+        </div>
+    </div>
+    <!--End Page Title-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>@Model.Naglowek</h2>
+                <p>@Model.Tresc1</p>
+                <p>@Model.Tresc2</p>
+                <p>@Model.Tresc3</p>
+                <p></p>
+            </div>
+        </div>
+
+        @{
+
+        string[] lista = (Model.Lista).Split(',');
+        }
+
+        <div class="row">
+            <div class="col-12">
+                <div class="rte-setting">
+                    <p>@Model.Tresc4</p></p>
+                    <ul style="margin-left:30px">
+                        @foreach(var item in lista)
+                        {
+                        <li>@item</li>
+                        }
+                    </ul>
+                    <p></p>
+                    <p>@Model.Tresc5</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<!--End Body Content-->

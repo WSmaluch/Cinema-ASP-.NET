@@ -1,0 +1,100 @@
+﻿@model Firma.Data.Data.Kino.Filmy
+@{
+    ViewData["Title"] = "Szczegoly";
+}
+
+<div id="page-content">
+    <br /><br /><br />
+    <div class="page section-header text-center mb-0">
+        <div class="page-title">
+            <div class="wrapper"><h1 class="page-width">Zarezerwuj bilet</h1></div>
+        </div>
+    </div>
+    <!--MainContent-->
+    <br /><br />
+    <div id="MainContent" class="main-content" role="main">
+        <div id="ProductSection-product-template" class="product-template__container prstyle2 container" style="padding-right:8%">
+            <!--#ProductSection-product-template-->
+            <div class="product-single product-single-1">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="product-details-img product-single__photos bottom">
+                            <div class="zoompro-wrap product-zoom-right pl-20">
+                                <div class="zoompro-span" style="padding-left:-30%">
+                                    <img class="blur-up lazyload zoompro" style="margin-right:10%;float:right" data-zoom-image="~/lib/bootstrap/images/movies/@Model.Zdjecie" alt="" src="~/lib/bootstrap/images/movies/@Model.Zdjecie" width="68%" height="68%" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--Product Feature-->
+                        
+                        <!--End Product Feature-->
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="product-single__meta">
+                            <h1 class="product-single__title" style="font-size:28px; padding-left:20%">@Model.Tytuł</h1>
+                            <div class="product-form__item--submit">
+                                <button type="button" name="add" class="btn product-form__cart-submit">
+                                    <span>Kup bilet</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!--Product Tabs-->
+                        <div class="tabs-listing">
+                            <div class="tab-container">
+                                <h1 class="acor-ttl active" rel="tab1" >Informacje o filmie</h1>
+                                <div id="tab1" class="tab-content">
+                                    <div class="product-description rte" style="font-size:20px">
+                                        <p><b>Opis: </b>@Model.Opis</p>
+                                        <p><b>Gatunek</b>: @Model.Gatunek</p>
+                                        <p><b>Czas trwania:</b> @Model.Dlugosc min</p>
+                                        <p><b>Data premiery:</b> @Model.DataPremiery.ToShortDateString()</p>
+                                        <p><b>Reżyseria: </b> @Model.Rezyser</p>
+                                    </div>
+                                </div>       
+                            </div>
+                            </div>
+                        </div>
+                        <!--End Product Tabs-->
+                    </div>
+                </div>
+                <!--End-product-single-->
+            
+         </div>
+        <div class="page section-header text-center mb-0">
+            <div class="page-title">
+                <div class="wrapper"><h1 class="page-width">Zobacz najnowszy zwiastun</h1></div>
+            </div>
+        </div>
+        <br><br>
+        <div style="width:900px; margin-left:26%;">
+            <div >
+                <iframe width="400" height="450" src="@Model.LinkDoZwiastunu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <br/><br/>
+            </div>
+        </div>
+        <div class="page section-header text-center mb-0">
+            <div class="page-title">
+                <div class="wrapper"><h1 class="page-width">Nie możesz tego przegapić</h1></div>
+            </div>
+        </div>
+        <br><br>
+        <div class="related-product grid-products">
+                <div class="productPageSlider">
+                    @await Html.PartialAsync("FilmyPromowane",(IEnumerable<Firma.Data.Data.Kino.Filmy>)ViewBag.ModelFilm)
+                </div>
+        </div>
+        <div class="page section-header text-center mb-0">
+            <div class="page-title">
+                <div class="wrapper"><h1 class="page-width">Oferta dla Ciebie</h1></div>
+            </div>
+        </div>
+        <div>
+            <br /><br/>
+            <div class="productPageSlider">
+                @await Html.PartialAsync("Oferty",(IEnumerable<Firma.Data.Data.CMS.Oferty>)ViewBag.ModelOferty)
+            </div>
+        </div>
+        <br><br>
+        
+        </div>
+    </div>

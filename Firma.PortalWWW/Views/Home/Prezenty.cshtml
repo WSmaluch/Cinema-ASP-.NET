@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Prezenty>
+@{
+    ViewData["Title"] = "Prezenty";
+}
+<div id="page-content">
+    <!--Page Title-->
+    <br /><br /><br />
+    <div class="page section-header text-center mb-0">
+        <div class="page-title">
+            <div class="wrapper"><h1 class="page-width">Prezenty</h1></div>
+        </div>
+    </div>
+    <!--End Page Title-->
+    <div class="container" style="padding-left:15%;">
+        <br /><br />
+        <div class="row">
+        </div>
+        <!--End Sidebar-->
+        <!--Main Content-->
+        <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col">
+            <div>
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 article">
+                            <a class="article_featured-image" href="#"><img class="blur-up lazyload" width=130% height=130% src="~/lib/bootstrap/images/gifts/@item.Zdjecie" alt="It's all about how you wear"></a>
+                            <h2 class="h3"><a href="blog-left-sidebar.html">@item.Tytul</a></h2>
+                        <div class="rte">
+                                <p>@item.Tresc</p>
+                        </div>
+                        <p><a href="#" class="btn btn-secondary btn--small">Czytaj więcej <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
+                    </div>
+                    }
+            </div>
+        </div>
+        <!--End Main Content-->
+    </div>
+</div>
+</div>

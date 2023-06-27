@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.StronaGlowna>
+@{
+
+    string[] reklamyZdjecia = (Model.First().ReklamyZdjecia).Split(';');
+    string[] reklamyTeksty = (Model.First().TekstyReklama).Split(';');
+}
+@for (var i = 0; i < reklamyZdjecia.Length; i++)
+{
+<div class="collection-grid-item">
+    <a href="collection-page.html" class="collection-grid-item__link">
+        <img class="blur-up lazyload" src="~/lib/bootstrap/images/collection/@reklamyZdjecia[i]" alt="Cosmetic" />
+        <div class="collection-grid-item__title-wrapper">
+            <h3 class="collection-grid-item__title btn btn--secondary no-border">@reklamyTeksty[i]</h3>
+        </div>
+    </a>
+</div>
+}
+
+

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.StronaGlowna>
+
+
+@{
+
+    string[] bannery = (Model.First().Bannery).Split(';');
+    string[] tekstyBanner = (Model.First().TekstyBanner).Split(';');
+}
+
+<div class="slide">
+    <div class="blur-up lazyload bg-size">
+            <img class="blur-up lazyload bg-img" data-src="~/lib/bootstrap/images/slideshow-banners/@bannery[0]" src="~/lib/bootstrap/images/slideshow-banners/@bannery[0]" alt="Banner1" title="Banner1" />
+        <div class="slideshow__text-wrap slideshow__overlay classic bottom">
+            <div class="slideshow__text-content bottom">
+                <div class="wrap-caption center">
+                    <h2 class="h1 mega-title slideshow__title">@tekstyBanner[0]</h2>
+                    <span class="mega-subtitle slideshow__subtitle">@tekstyBanner[1]</span>
+                    @Html.ActionLink(tekstyBanner[2], "Index", "Kino", null, new { @class = "btn" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="slide">
+    <div class="blur-up lazyload bg-size">
+        <img class="blur-up lazyload bg-img" data-src="~/lib/bootstrap/images/slideshow-banners/@bannery[1]" src="~/lib/bootstrap/images/slideshow-banners/@bannery[1]" alt="Banner1" title="Banner1" />
+        <div class="slideshow__text-wrap slideshow__overlay classic bottom">
+            <div class="slideshow__text-content bottom">
+                <div class="wrap-caption center">
+                    <h2 class="h1 mega-title slideshow__title">@tekstyBanner[3]</h2>
+                    <span class="mega-subtitle slideshow__subtitle">@tekstyBanner[4]</span>
+                    @Html.ActionLink(tekstyBanner[2], "Index", "Kino", null, new { @class = "btn" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

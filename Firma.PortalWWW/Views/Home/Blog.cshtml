@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Posty>
+@{
+    ViewData["Title"] = "Blog";
+}
+<div id="page-content">
+    <!--Page Title-->
+    <br /><br /><br />
+    <div class="page section-header text-center mb-0">
+        <div class="page-title">
+            <div class="wrapper"><h1 class="page-width">Blog</h1></div>
+        </div>
+    </div>
+    <!--End Page Title-->
+    <div class="container">
+        <div class="row">
+            <!--Main Content-->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+                
+                <div class="blog--list-view blog--grid-load-more">
+                    <br/><br/>
+                    @foreach(var item in Model)
+                    {
+                    <div class="article">
+                        <a class="article_featured-image" href="#"><img class="blur-up lazyload" src="~/lib/bootstrap/images/blog/@item.ObrazekUrl" width="70%" alt="It's al7l about how you wear"></a>
+                        <h2 class="h3"><a href="blog-left-sidebar.html">@item.Tytul</a></h2>
+                        <ul class="publish-detail">
+                            <li><i class="anm anm-user-al" aria-hidden="true"></i> @item.Autor</li>
+                            <li><i class="icon anm anm-clock-r"></i> <time datetime="2023-04-16"> @item.DataPublikacji</time></li>
+                            <li>
+                                <ul class="inline-list">
+                                    <li><i class="icon anm anm-comments-l"></i> <a href="#"> 0 comments</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="rte">
+                          <p>@item.Tresc</p>
+                        </div>
+                        <p><a href="#" class="btn btn-secondary btn--small">Czytaj więcej <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
+                    </div>
+                    }
+                    <div class="loadmore-post">
+                        <a href="#;" class="btn loadMorepost">Wczytaj więcej</a>
+                    </div>
+                </div>
+            </div>
+            <!--End Main Content-->
+        </div>
+    </div>
+
+</div>

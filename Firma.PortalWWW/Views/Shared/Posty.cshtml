@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Posty>
+@foreach(var item in Model.Take(2))
+{
+<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="wrap-blog">
+        <a href="blog-left-sidebar.html" class="article__grid-image">
+            <img src="~/lib/bootstrap/images/blog/@item.ObrazekUrl" alt="It's all about how you wear" title="Post1" class="blur-up lazyloaded" />
+        </a>
+        <div class="article__grid-meta article__grid-meta--has-image">
+            <div class="wrap-blog-inner">
+                <h2 class="h3 article__title">
+                    <a href="blog-left-sidebar.html">@item.Tytul</a>
+                </h2>
+                <span class="article__date">@item.DataPublikacji</span>
+                <div class="rte article__grid-excerpt">
+                    @item.Tresc
+                </div>
+                <ul class="list--inline article__meta-buttons">
+                    <li><a href="blog-article.html">Czytaj więcej</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+}

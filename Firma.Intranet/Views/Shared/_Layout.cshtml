@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+<html>
+<html class="no-js" lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="~/lib/materialize/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="~/lib/materialize/css/main.css" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madmin</title>
+</head>
+<body>
+    <nav class="blue darken-2">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="@Url.Action("Index", "Home")" class="brand-logo">Madmin</a>
+                <a href="#" data-activates="side-nav" class="button-collapse show-on-large right">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Kategorie" asp-controller="Home" asp-action="Index">Kategorie</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Filmy" asp-controller="Home" asp-action="Index">Filmy</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Posty" asp-controller="Home" asp-action="Index">Posty</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Oferty" asp-controller="Home" asp-action="Index">Oferty</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Prezenty" asp-controller="Home" asp-action="Index">Prezenty</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="StronaGlowna" asp-controller="Home" asp-action="Index">StronaGlowna</a></li>
+                </ul>
+                <!-- Side nav -->
+                <ul id="side-nav" class="side-nav">
+                    <li>
+                        <div class="user-view">
+                            <div class="background">
+                                <img src="~/lib/materialize/img/ocean.jpg" alt="">
+                            </div>
+                            <a href="#">
+                                <img src="~/lib/materialize/img/person1.jpg" alt="" class="circle">
+                            </a>
+                            <a href="">
+                                <span class="name white-text">John Doe</span>
+                            </a>
+                            <a href="">
+                                <span class="email white-text">jdoe@gmail.com</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="index.html"> <i class="material-icons">dashboard</i> Panel</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Kategorie" asp-controller="Home" asp-action="Index">Kategorie</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Filmy" asp-controller="Home" asp-action="Index">Filmy</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Gatunek" asp-controller="Home" asp-action="Index">Gatunki</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Posty" asp-controller="Home" asp-action="Index">Posty</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Komentarz" asp-controller="Home" asp-action="Index">Komentarz</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Strona" asp-controller="Home" asp-action="Index">Strona</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Oferty" asp-controller="Home" asp-action="Index">Oferty</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Prezenty" asp-controller="Home" asp-action="Index">Prezenty</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Prywatnosc" asp-controller="Home" asp-action="Index">Prywatnosc</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="ONas" asp-controller="Home" asp-action="Index">O nas</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="StronaGlowna" asp-controller="Home" asp-action="Index">StronaGlowna</a></li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li><a class="subheader">Kontrola konta</a></li>
+                    <li><a href="login.html" class="waves-effect">Wyloguj</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody();
+    <!-- Footer -->
+    <footer class="section blue darken-2 white-text center">
+        <p>Madmin Panel Copyright &copy; 2018</p>
+    </footer>
+    @await RenderSectionAsync("Scripts", required:false)
+</body>
+
+</html>

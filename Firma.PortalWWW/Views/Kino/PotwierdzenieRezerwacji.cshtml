@@ -1,0 +1,76 @@
+﻿@model Firma.Data.Data.Kino.Bilet
+@{
+    ViewData["Title"] = "Potwierdzenie rezerwacji";
+}
+
+<div id="page-content">
+    <br /><br /><br />
+    <div class="page section-header text-center mb-0">
+        <div class="page-title">
+            <div class="wrapper">
+                <h1 class="page-width">Potwierdzenie rezerwacji</h1>
+            </div>
+        </div>
+    </div>
+    <style>
+        #container {
+            max-width: 600px;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+            #container h1 {
+                font-size: 24px;
+                margin-top: 0;
+            }
+
+            #container p {
+                margin: 10px 0;
+            }
+
+            #container a {
+                display: inline-block;
+                padding: 8px 12px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+
+                #container a:hover {
+                    background-color: #0056b3;
+                }
+    </style>
+    <!--MainContent-->
+    <br /><br />
+    <div id="MainContent" class="main-content" role="main">
+        <div id="container">
+            <h1>Potwierdzenie rezerwacji</h1>
+            <p>Twój bilet został zarezerwowany:</p>
+            <p><strong>Film:</strong> @ViewBag.TytulFilmu</p>
+            <p><strong>Zarezerwowany przez:</strong> @ViewBag.ZarezerwowanyPrzez</p>
+            <p><strong>Data projekcji:</strong> @ViewBag.DataProjekcji</p>
+            
+            <p><strong>Wybrane miejsca:</strong>
+                <ul>
+            @foreach (var bilet in ViewBag.Bilety)
+            {
+                <li style="margin-left:4%"><p><strong>Numer siedzenia:</strong> @bilet.NumerSiedzenia</p>
+                
+                <a href="/Kino/GenerateTicket?filmId=@bilet.FilmId&seatNumber=@bilet.NumerSiedzenia&name=@bilet.ZarezerwowanyPrzez&selectedDate=@bilet.DataProjekcji.ToShortDateString()&selectedTime=@bilet.DataProjekcji.ToString("HH:mm")" target="_blank">Generuj bilet PDF</a></li>
+            }
+                </ul>
+            <p>Dziękujemy za dokonanie rezerwacji. Twój bilet został zarezerwowany.</p>
+            <p>W celu potwierdzenia rezerwacji, prosimy o dokonanie płatności w ciągu 24 godzin.</p>
+            <p>Potwierdzenie płatności oraz szczegółowe informacje o seansie zostaną wysłane na podany adres e-mail - <b>@ViewBag.Email</b>.</p>
+        </div>
+
+    </div>
+</div>

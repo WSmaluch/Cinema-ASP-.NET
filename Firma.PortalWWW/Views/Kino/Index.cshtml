@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Firma.Data.Data.Kino.Filmy>;
+@{
+    ViewData["Title"] = "Repertuar";
+}
+<body class="page-template belle cart-variant1">
+    <div id="page-content">
+        <!--Page Title-->
+        <br /><br /><br />
+        <div class="page section-header text-center">
+            <div class="page-title">
+                <div class="wrapper"><h1 class="page-width">Repertuar</h1></div>
+            </div>
+        </div>
+        <!--End Page Title-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+                    <div class="text-center mb-4">
+                        <div class="rte-setting">
+                            <form action="#" method="post">
+                                <button type="submit" name="date" value="@DateTime.Today.ToShortDateString()" class="btn btn-secondary btn--small small--hide">Dzisiaj</button>
+                                <button type="submit" name="date" value="@DateTime.Today.AddDays(1).ToShortDateString()" class="btn btn-secondary btn--small small--hide">Jutro</button>
+                                <button type="submit" name="date" value="@DateTime.Today.AddDays(2).ToShortDateString()" class="btn btn-secondary btn--small small--hide">Pojutrze</button>
+                                <input type="date" id="datepicker" name="date" placeholder="Wprowadź datę" style="width:39px;height:29px">
+                                <button type="submit" id="submit-button" style="display:none;">Wyślij</button>
+                            </form>
+                        </div>
+
+                        <script>
+                            document.getElementById("datepicker").addEventListener("change", function () {
+                                document.getElementById("submit-button").click();
+                            });
+                        </script>
+
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+                    <form action="#" method="post" class="cart style2">
+                        <table>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="cart__row border-bottom line1 cart-flex border-top">
+                                    <td class="cart__image-wrapper cart-flex-item">
+                                        <a href="/Kino/Szczegoly/@item.IdFilmu"><img class="cart__image" src="~/lib/bootstrap/images/movies/@item.Zdjecie" alt="image"></a>
+                                    </td>
+                                    <td class="cart__meta small--text-left cart-flex-item">
+                                        <div class="list-view-item__title">
+                                            <a href="/Kino/Szczegoly/@item.IdFilmu">@item.Tytuł </a>
+                                        </div>
+
+                                        <div class="cart__meta-text">
+                                            @item.Gatunek | @item.Dlugosc min<br>2D<br><br>
+                                            @foreach (var godzinaGrania in item.GodzinyGrania.Split(';'))
+                                            {
+                                                <a href="/Kino/WybierzMiejsca/@item.IdFilmu?godzinaGrania=@godzinaGrania&dataProjekcji=@ViewBag.SelectedDate" class="btn btn-secondary btn--small small--hide">@godzinaGrania</a>
+
+                                            }
+                                        </div>
+                                    </td>
+                                    <td class="cart__price-wrapper cart-flex-item">
+                                        
+                                    </td>
+                                    <td class="cart__update-wrapper cart-flex-item text-right">
+                                       
+                                    </td>
+                                    <td class="text-right small--hide cart-price">
+                                        
+                                    </td>
+                                   
+                                </tr>
+                            }
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+<!--End Body Content-->

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Oferty>
+@{
+    ViewData["Title"] = "Oferty";
+}
+<div id="page-content">
+    <!--Page Title-->
+    <br /><br /><br />
+    <div class="page section-header text-center mb-0">
+        <div class="page-title">
+            <div class="wrapper"><h1 class="page-width">Oferty</h1></div>
+        </div>
+    </div>
+    <!--End Page Title-->
+    <div class="container" style="padding-left:15%;">
+        <br /><br />
+        <div class="row">
+            </div>
+            <!--End Sidebar-->
+            <!--Main Content-->
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col">
+                
+                <div>
+                    <div class="row">
+                        
+                        @foreach(var item in Model)
+                        {
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 article">
+                        <a class="article_featured-image" href="#"><img class="blur-up lazyload" src="~/lib/bootstrap/images/blog/@item.Zdjecie" alt="@item.Zdjecie"></a>
+                            <h2 class="h3"><a href="blog-left-sidebar.html">@item.Tytul</a></h2>
+                            <div class="rte">
+                                <p>@item.Tresc</p>
+                            </div>
+                            <p><a href="#" class="btn btn-secondary btn--small">Czytaj więcej <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
+                            <br />
+                        </div>
+                        }
+                    <br /><br />
+                    </div>
+                    </div>
+                    <div class="pagination">
+                        <ul>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li class="next"><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--End Main Content-->
+        </div>
+    </div>

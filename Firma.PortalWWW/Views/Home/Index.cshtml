@@ -1,0 +1,141 @@
+﻿@model Firma.Data.Data.CMS.Strona
+@{
+    ViewData["Title"] = @Model.LinkTytul;
+}
+
+<!--Body Content-->
+<div id="page-content">
+    <!--Home slider-->
+    <div class="slideshow slideshow-wrapper pb-section sliderFull">
+        <div class="home-slideshow">
+            @await Html.PartialAsync("Bannery",(IEnumerable<Firma.Data.Data.CMS.StronaGlowna>)ViewBag.ModelStronyGlownej)
+        </div>
+    </div>
+    <!--End Home slider-->
+    <!--Collection Tab slider-->
+    <div class="tab-slider-product section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="h2">Nowości</h2>
+                        <p>Światowe premiery</p>
+                    </div>
+                    <div class="tabs-listing">
+                        <ul class="tabs clearfix">
+                            <li class="active" rel="tab1">Teraz</li>
+                            <li rel="tab2">Nadchodzą</li>
+                        </ul>
+                        <div class="tab_container">
+                            <div id="tab1" class="tab_content grid-products">
+                                <div class="productSlider">
+                                    @await Html.PartialAsync("FilmyPromowane",(IEnumerable<Firma.Data.Data.Kino.Filmy>)ViewBag.ModelFilm)
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab_content grid-products">
+                                <div class="productSlider">
+                                    @await Html.PartialAsync("FilmyPromowane",(IEnumerable<Firma.Data.Data.Kino.Filmy>)ViewBag.ModelFilmNadchodzace)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Collection Tab slider-->
+    <!--Collection Box slider-->
+    <div class="collection-box section">
+        <div class="container-fluid">
+            <div class="collection-grid">
+                <div class="collection-grid-item">
+                    <a href="collection-page.html" class="collection-grid-item__link">
+                        <img class="blur-up lazyload" src="~/lib/bootstrap/images/collection/plakat1.png" alt="Fashion" class="blur-up lazyload" />
+                        <div class="collection-grid-item__title-wrapper">
+                            <h3 class="collection-grid-item__title btn btn--secondary no-border">Festiwale</h3>
+                        </div>
+                    </a>
+                </div>
+                @await Html.PartialAsync("Reklamy",(IEnumerable<Firma.Data.Data.CMS.StronaGlowna>)ViewBag.ModelStronyGlownej)
+            </div>
+        </div>
+    </div>
+    <!--End Collection Box slider-->
+    <!--Logo Slider-->
+    <div class="section logo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="logo-bar">
+                        <div class="logo-bar__item">
+                            <img src="~/lib/bootstrap/images/logo/brandlogo1.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="~/lib/bootstrap/images/logo/brandlogo2.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="~/lib/bootstrap/images/logo/brandlogo3.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="~/lib/bootstrap/images/logo/brandlogo4.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="~/lib/bootstrap/images/logo/brandlogo5.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="~/lib/bootstrap/images/logo/brandlogo6.jpg" alt="" title="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="latest-blog section pt-0">
+        <div class="container">
+            <div class="row">
+                <div >
+                    <div class="section-header text-center">
+                        <h2 class="h2">Ostatnio na blogu</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @await Html.PartialAsync("Posty",(IEnumerable<Firma.Data.Data.CMS.Posty>)ViewBag.ModelBlog)
+            </div>
+        </div>
+    </div>
+    <!--End Latest Blog-->
+    <!--Store Feature-->
+    <div class="store-feature section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="display-table store-info">
+                        <li class="display-table-cell">
+                            <i class="icon anm anm-truck-l"></i>
+                            <h5>Uniknij kolejek</h5>
+                            <span class="sub-text">Kup bilety do kina online lub osobiście</span>
+                        </li>
+                        <li class="display-table-cell">
+                            <i class="icon anm anm-dollar-sign-r"></i>
+                            <h5>Przekąski i napoje na miejscu</h5>
+                            <span class="sub-text">Skorzystaj z naszej szerokiej oferty przekąsek i napojów</span>
+                        </li>
+                        <li class="display-table-cell">
+                            <i class="icon anm anm-comments-l"></i>
+                            <h5>Wsparcie online</h5>
+                            <span class="sub-text">Nasz personel jest zawsze gotowy do pomocy</span>
+                        </li>
+                        <li class="display-table-cell">
+                            <i class="icon anm anm-credit-card-front-r"></i>
+                            <h5>Najwyższa jakość kina</h5>
+                            <span class="sub-text">Zanurz się w naszym wysokiej jakości kinie</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Store Feature-->
+</div>
+<!--End Body Content-->

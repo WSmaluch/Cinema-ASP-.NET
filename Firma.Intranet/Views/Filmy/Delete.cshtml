@@ -1,0 +1,129 @@
+﻿@model Firma.Data.Data.Kino.Filmy
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Filmy</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tytuł)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tytuł)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataPremiery)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataPremiery)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezyser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rezyser)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dlugosc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dlugosc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gatunek)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gatunek)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LinkDoZwiastunu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LinkDoZwiastunu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OdKiedyGrany)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OdKiedyGrany)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoKiedyGrany)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoKiedyGrany)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Zdjecie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Zdjecie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GodzinyGrania)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GodzinyGrania)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KtoDodal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KtoDodal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyDodal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyDodal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KtoZmodyfikowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KtoZmodyfikowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyZmodyfikowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyZmodyfikowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KtoWykasowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KtoWykasowal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KiedyWykasowal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KiedyWykasowal)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdFilmu" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
